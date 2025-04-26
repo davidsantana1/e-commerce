@@ -5,8 +5,8 @@ import ProfileButton from "./ProfileButton";
 function NavBarActions() {
   return (
     <div className="hidden items-center gap-2 lg:flex">
-      <NavBarButton icon={<IoCart />} />
-      <NavBarButton icon={<IoHeart />} />
+      <NavBarButton bg="light" icon={<IoCart />} />
+      <NavBarButton className="!text-red-500" bg="light" icon={<IoHeart />} />
       <ProfileButton />
     </div>
   );
