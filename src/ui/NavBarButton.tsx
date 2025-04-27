@@ -3,7 +3,7 @@ import { cloneElement, HTMLAttributes, ReactElement } from "react";
 import { cn } from "../utils/utils";
 
 const navBarButtonVariants = cva(
-  "aspect-square h-full cursor-pointer rounded-full lg:p-4 bg-brand-900",
+  "aspect-square h-full cursor-pointer rounded-full lg:p-4",
   {
     variants: {
       variant: {
@@ -18,9 +18,14 @@ const navBarButtonVariants = cva(
         lg: "text-2xl",
         xl: "text-3xl",
       },
+      bg: {
+        light: "bg-brand-50 text-brand-900",
+        dark: "bg-brand-900 text-brand-50",
+      },
       defaultVariants: {
         variant: "default",
         size: "default",
+        bg: "dark",
       },
     },
   },
@@ -32,12 +37,20 @@ interface NavBarButtonProps
   icon: ReactElement<{ size?: number; className?: string }>;
 }
 
-function NavBarButton({ icon, variant, size, className }: NavBarButtonProps) {
+function NavBarButton({
+  icon,
+  variant,
+  size,
+  bg,
+  className,
+}: NavBarButtonProps) {
   return (
-    <button className={cn(navBarButtonVariants({ variant, size, className }))}>
+    <button
+      className={cn(navBarButtonVariants({ variant, bg, size, className }))}
+    >
       {cloneElement(icon, {
         size: 25,
-        className: "justify-self-center text-white",
+        className: "justify-self-center",
       })}
     </button>
   );
