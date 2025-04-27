@@ -19,8 +19,8 @@ const navBarButtonVariants = cva(
         xl: "text-3xl",
       },
       bg: {
-        light: "bg-brand-50 text-brand-900",
-        dark: "bg-brand-900 text-brand-50",
+        light: "bg-brand-50 hover:bg-brand-200 text-brand-900",
+        dark: "bg-brand-900 hover:bg-brand-700 text-brand-50",
       },
       defaultVariants: {
         variant: "default",

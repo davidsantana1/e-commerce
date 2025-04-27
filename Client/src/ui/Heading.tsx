@@ -22,7 +22,7 @@ const headingVariants = cva("", {
     },
     tint: {
       light: "text-brand-50",
-      dark: "text-brand-950",
+      dark: "text-brand-975",
     },
     defaultVariants: {
       variant: "default",

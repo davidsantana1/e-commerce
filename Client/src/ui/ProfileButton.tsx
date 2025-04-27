@@ -1,6 +1,6 @@
 function ProfileButton() {
   return (
-    <div className="bg-brand-50 flex cursor-pointer items-center justify-around gap-4 rounded-[22rem] py-1 pr-2 pl-4">
+    <div className="bg-brand-50 hover:bg-brand-200 flex cursor-pointer items-center justify-around gap-4 rounded-[22rem] py-1 pr-2 pl-4">
       <p className="text-brand-900 font-bold">David Santana</p>
       <img
         src="/cs50cat.jpg"
