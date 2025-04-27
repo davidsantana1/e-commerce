@@ -5,6 +5,9 @@
   * {
     font-family: "Geist";
   }
+  body {
+    color: theme(--color-brand-975);
+  }
 }
 
 @theme {
@@ -33,7 +36,6 @@
   );
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.37);
 }

@@ -14,6 +14,7 @@ const headingVariants = cva("", {
       md: "text-base",
       lg: "text-2xl",
       xl: "text-3xl",
+      xxl: "text-6xl",
     },
     weight: {
       default: "font-normal",
@@ -24,11 +25,18 @@ const headingVariants = cva("", {
       light: "text-brand-50",
       dark: "text-brand-975",
     },
+    margin: {
+      sm: "mb-2",
+      md: "mb-5",
+      lg: "mb-7",
+      xl: "mb-9",
+    },
     defaultVariants: {
       variant: "default",
       size: "default",
       weight: "bold",
       tint: "light",
+      margin: "md",
     },
   },
 });
@@ -48,13 +56,14 @@ function Heading({
   size,
   variant,
   weight,
+  margin,
   tint,
   ...props
 }: HeadingProps) {
   return (
     <Tag
       className={cn(
-        headingVariants({ variant, size, weight, tint, className }),
+        headingVariants({ variant, size, margin, weight, tint, className }),
       )}
       {...props}
     >
