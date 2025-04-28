@@ -3,7 +3,7 @@ import { cloneElement, HTMLAttributes, ReactElement } from "react";
 import { cn } from "../utils/utils";
 
 const navBarButtonVariants = cva(
-  "aspect-square h-full cursor-pointer rounded-full lg:p-4",
+  "aspect-square h-full cursor-pointer rounded-full p-2 lg:p-4",
   {
     variants: {
       variant: {

@@ -4,14 +4,15 @@ import Logo from "./Logo";
 
 function NavBar() {
   return (
-    <nav className="glass relative mb-5 items-center justify-between py-3 pr-4 pl-6 lg:flex lg:rounded-[22rem]">
-      <div className="top-0 flex items-center justify-center gap-12 lg:flex-row lg:gap-8">
-        <Logo />
-        <SearchBar />
-      </div>
-
-      <NavBarActions />
-    </nav>
+    <div className="lg:pb-22">
+      <nav className="glass fixed z-[999] hidden w-full items-center justify-between px-10 py-3 md:flex">
+        <div className="top-0 flex items-center justify-center gap-8">
+          <Logo />
+          <SearchBar />
+        </div>
+        <NavBarActions />
+      </nav>
+    </div>
   );
 }
 
