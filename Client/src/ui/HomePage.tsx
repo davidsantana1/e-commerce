@@ -3,6 +3,7 @@ import ButtonWithIcon from "./ButtonWithIcon";
 import Heading from "./Heading";
 import Paragraph from "./Paragraph";
 import BentoBlockLink from "./BentoBlockLink";
+import SliderWrapper from "@/app/components/ui/SliderWrapper";
 
 function HomePage() {
   return (
@@ -41,40 +42,11 @@ function HomePage() {
           rowSpan="lg:row-span-1"
         />
 
-        <div className="slider-wrapper flex flex-col rounded-3xl lg:col-span-5 lg:row-span-2">
-          <div className="slider rounded-3xl">
-            <img
-              id="slide-1"
-              src="https://images.unsplash.com/photo-1656464868371-602be27fd4c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80"
-              alt="3D rendering of an imaginary orange planet in space"
-            />
-            <img
-              id="slide-2"
-              src="https://images.unsplash.com/photo-1657586640569-4a3d4577328c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80"
-              alt="3D rendering of an imaginary green planet in space"
-            />
-            <img
-              id="slide-3"
-              src="https://images.unsplash.com/photo-1656077217715-bdaeb06bd01f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80"
-              alt="3D rendering of an imaginary blue planet in space"
-            />
-          </div>
-          <Heading
-            className="absolute mt-4 self-center"
-            tint="light"
-            size="xl"
-            weight="bold"
-          >
-            My product name
-          </Heading>
-          <div className="slider-nav">
-            <a href="#slide-1"></a>
-            <a href="#slide-2"></a>
-            <a href="#slide-3"></a>
-          </div>
+        <div className="group flex flex-col rounded-3xl lg:col-span-5 lg:row-span-2">
+          <SliderWrapper />
         </div>
         <div className="glass flex items-center justify-center rounded-3xl p-8 lg:col-span-10 lg:row-span-2">
-          Hellog
+          <SliderWrapper />
         </div>
       </div>
     </div>
