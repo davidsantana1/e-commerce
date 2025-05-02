@@ -7,9 +7,9 @@ import SliderWrapper from "@/app/components/ui/SliderWrapper";
 
 function HomePage() {
   return (
-    <div className="flex h-screen w-full items-center justify-center p-6 lg:p-0">
-      <div className="flex h-screen w-full grid-cols-1 grid-rows-14 flex-col gap-4 sm:grid-rows-4 lg:grid lg:grid-cols-10">
-        <div className="glass relative flex flex-col rounded-3xl p-8 pb-0 sm:row-span-8 lg:col-span-5 lg:row-span-3 lg:flex-row lg:overflow-hidden lg:pr-0">
+    <div className="flex w-full items-center justify-center p-6 lg:p-0">
+      <div className="flex min-h-screen w-full grid-cols-1 flex-col gap-4 sm:grid-rows-4 lg:grid lg:grid-cols-10 lg:[grid-template-rows:0.2fr_1fr_1fr]">
+        <div className="glass relative flex flex-col rounded-3xl p-8 pb-0 sm:row-span-8 lg:col-span-5 lg:row-span-2 lg:flex-row lg:overflow-hidden lg:pr-0">
           <div className="flex flex-col self-center pb-8">
             <Heading margin="md" size="xxl" weight="bold">
               New Phone, <span className="highlighted">New You.</span>
@@ -26,7 +26,7 @@ function HomePage() {
             </ButtonWithIcon>
           </div>
           <img
-            className="w-xs self-center object-cover select-none lg:w-auto lg:self-auto"
+            className="mt-7 max-h-[80vh] w-xs self-center object-contain select-none lg:w-xs lg:self-auto"
             src="/hand-holding-iphone.png"
             alt="Hand holding an iPhone"
           />
@@ -42,10 +42,10 @@ function HomePage() {
           rowSpan="lg:row-span-1"
         />
 
-        <div className="group flex flex-col rounded-3xl lg:col-span-5 lg:row-span-2">
+        <div className="group mt-4 flex flex-col rounded-3xl lg:col-span-5 lg:row-span-1">
           <SliderWrapper />
         </div>
-        <div className="glass flex items-center justify-center rounded-3xl p-8 lg:col-span-10 lg:row-span-2">
+        <div className="glass flex items-center justify-center rounded-3xl p-8 lg:col-span-full lg:row-span-1">
           <SliderWrapper />
         </div>
       </div>

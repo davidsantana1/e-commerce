@@ -11,7 +11,7 @@ function CardItem({ item }: CardItemProps) {
   const { id, imgSrc, name, price } = item;
   return (
     <Link to={`/products/${id}`} className="group" id={id}>
-      <img className="mb-4 max-w-56 rounded-xl" src={imgSrc} alt={name} />
+      <img className="mb-4 max-w-45 rounded-xl" src={imgSrc} alt={name} />
       <Heading weight="bold">{name}</Heading>
       <Paragraph variant="dark">${price}</Paragraph>
     </Link>

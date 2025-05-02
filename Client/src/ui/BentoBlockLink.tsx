@@ -33,7 +33,7 @@ function BentoBlockLink({
         (className ? className + " " : "") +
         (rowSpan ? rowSpan + " " : "") +
         (colSpan ? colSpan + " " : "") +
-        "group relative cursor-pointer items-center rounded-3xl p-8 pb-0 lg:flex lg:pb-8"
+        "group relative h-[10.4rem] cursor-pointer items-center rounded-3xl p-8 pb-0 lg:flex lg:pb-8"
       }
     >
       <div>
