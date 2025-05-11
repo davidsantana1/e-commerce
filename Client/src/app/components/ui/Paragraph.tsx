@@ -2,7 +2,7 @@ import { HTMLAttributes } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import clsx from "clsx";
 
-const paragraphVariants = cva("", {
+const paragraphVariants = cva("lg:text-sm xl:text-base", {
   variants: {
     variant: {
       light: "text-brand-50",

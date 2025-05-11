@@ -8,6 +8,7 @@ const cardItems: ICardItem[] = [
     price: 550,
     imgSrc:
       "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "phones",
   },
   {
     id: "1",
@@ -15,6 +16,7 @@ const cardItems: ICardItem[] = [
     price: 550,
     imgSrc:
       "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "phones",
   },
   {
     id: "1",
@@ -22,6 +24,7 @@ const cardItems: ICardItem[] = [
     price: 550,
     imgSrc:
       "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "phones",
   },
   {
     id: "1",
@@ -29,6 +32,7 @@ const cardItems: ICardItem[] = [
     price: 550,
     imgSrc:
       "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "phones",
   },
   {
     id: "1",
@@ -36,6 +40,7 @@ const cardItems: ICardItem[] = [
     price: 550,
     imgSrc:
       "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "phones",
   },
   {
     id: "1",
@@ -43,6 +48,7 @@ const cardItems: ICardItem[] = [
     price: 550,
     imgSrc:
       "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "phones",
   },
   {
     id: "1",
@@ -50,6 +56,7 @@ const cardItems: ICardItem[] = [
     price: 550,
     imgSrc:
       "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "phones",
   },
   {
     id: "2",
@@ -57,6 +64,7 @@ const cardItems: ICardItem[] = [
     price: 900,
     imgSrc:
       "https://images.unsplash.com/photo-1523800503107-5bc3ba2a6f81?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "phones",
   },
   {
     id: "3",
@@ -64,6 +72,7 @@ const cardItems: ICardItem[] = [
     price: 15,
     imgSrc:
       "https://images.unsplash.com/photo-1621951753163-ee63e7fc147e?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "phones",
   },
   {
     id: "4",
@@ -71,6 +80,7 @@ const cardItems: ICardItem[] = [
     price: 15,
     imgSrc:
       "https://images.unsplash.com/photo-1621951753163-ee63e7fc147e?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "phones",
   },
 ];
 

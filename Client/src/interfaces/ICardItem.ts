@@ -3,4 +3,5 @@ export interface ICardItem {
   name: string;
   price: number;
   imgSrc: string;
+  category: string;
 }

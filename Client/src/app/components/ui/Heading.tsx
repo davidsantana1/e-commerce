@@ -1,6 +1,6 @@
 import { VariantProps, cva } from "class-variance-authority";
 import { HTMLAttributes } from "react";
-import { cn } from "../utils/utils";
+import { cn } from "@/utils/utils";
 
 const headingVariants = cva("", {
   variants: {
@@ -12,7 +12,7 @@ const headingVariants = cva("", {
       default: "text-xl",
       sm: "text-sm",
       md: "text-base",
-      lg: "text-2xl",
+      lg: "text-2xl xl:text-2xl lg:text-sm",
       xl: "text-3xl",
       xxl: "text-6xl",
     },
