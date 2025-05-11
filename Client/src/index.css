@@ -14,8 +14,14 @@
     font-family: "Geist";
     scroll-behavior: smooth;
   }
+
+  html {
+    overflow-y: scroll;
+  }
+
   body {
     color: theme(--color-brand-975);
+    margin-right: 0 !important;
   }
 }
 

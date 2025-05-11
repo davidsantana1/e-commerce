@@ -1,7 +1,7 @@
 import { IoHeart, IoShirt, IoSparkles } from "react-icons/io5";
-import BentoBlockLink from "./BentoBlockLink";
-import SliderWrapper from "@/app/components/ui/SliderWrapper";
-import PromoBanner from "./PromoBanner";
+import BentoBlockLink from "@/components/ui/BentoBlockLink";
+import SliderWrapper from "@/components/ui/SliderWrapper";
+import PromoBanner from "@/components/ui/PromoBanner";
 
 function HomePage() {
   return (
@@ -47,13 +47,13 @@ function HomePage() {
         <BentoBlockLink
           heading="Upgrade Your Everyday – Find the Perfect Phone for You"
           paragraph="From flagship models with cutting-edge innovation to affordable options that get the job done, our collection is designed to meet every need. And with exclusive deals, fast delivery, and easy returns, upgrading your phone has never been this simple.
-Don’t wait to experience faster speeds, longer battery life, and stunning displays."
-          className="hover:bg-brand-600 bg-brand-500 px-12"
+  Don’t wait to experience faster speeds, longer battery life, and stunning displays."
+          className="hover:bg-brand-600 bg-brand-500 px-12 pt-12 lg:pt-0"
           image="/iphone.png"
           imageAlt="Stylish woman with a flower in her mouth."
           imageMargin="lg:mt-2"
           rowSpan="lg:row-span-1"
-          imageClassName="w-64 mr-5"
+          imageClassName="w-64 lg:mr-5 mx-auto"
           linkTo="/products/phones"
         />
         <SliderWrapper

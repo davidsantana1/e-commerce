@@ -1,4 +1,4 @@
-import Heading from "@/app/components/ui/Heading";
+import Heading from "@/components/ui/Heading";
 import CardList from "./CardList";
 import { IoArrowBackCircle, IoArrowForwardCircle } from "react-icons/io5";
 import { useRef, useState, useEffect, ReactElement, cloneElement } from "react";

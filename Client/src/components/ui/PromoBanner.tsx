@@ -25,7 +25,7 @@ function PromoBanner({
 }: PromoBannerProps) {
   return (
     <div
-      className={`relative flex flex-col p-8 pb-0 sm:row-span-8 lg:col-span-5 lg:row-span-2 lg:flex-row lg:overflow-hidden lg:pr-0 ${glassy ? "glass" : ""}`}
+      className={`relative flex flex-col p-8 pb-0 pl-0 sm:row-span-8 lg:col-span-5 lg:row-span-2 lg:flex-row lg:overflow-hidden lg:pr-0 ${glassy ? "glass" : ""}`}
     >
       <div className="flex flex-col self-center pb-8">
         <Heading margin="md" size="xxl" weight="bold">
@@ -39,7 +39,7 @@ function PromoBanner({
         </ButtonWithIcon>
       </div>
       <img
-        className="max-h-[80vh] w-xs self-center mask-b-from-90% object-contain select-none lg:mt-20 lg:w-xs lg:self-auto"
+        className="max-h-[80vh] w-xs object-contain select-none lg:w-xs lg:self-auto"
         src={imgSrc}
         alt={imgAlt}
       />

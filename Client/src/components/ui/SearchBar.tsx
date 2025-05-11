@@ -6,7 +6,7 @@ function SearchBar() {
     <div className="relative max-w-full lg:w-md">
       <input
         type="text"
-        className="bg-brand-50 border-brand-200 focus:border-brand-900 w-full grow rounded-[22rem] border-3 p-4 py-2 transition-all focus:outline-none lg:p-4"
+        className="border-brand-200 focus:border-brand-900 w-full grow rounded-[22rem] border-3 bg-white p-4 py-2 transition-all focus:outline-none lg:p-4"
         placeholder="Search products..."
       />
       <NavBarButton bg="dark" variant="input" icon={<IoIosSearch />} />
