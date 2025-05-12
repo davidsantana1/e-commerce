@@ -32,10 +32,10 @@ function CartProgressStepper({ activeStep }: CartProgressStepperProps) {
             >
               <icon.icon className="text-white" size={25} />
             </div>
-            <span className="text-sm text-white sm:text-base">{icon.name}</span>
+            <span className="text-xs text-white sm:text-base">{icon.name}</span>
           </div>
           {index < icons.length - 1 && (
-            <div className="mx-4 h-0.5 w-6 border-t-2 border-dashed sm:w-16 lg:w-24" />
+            <div className="mx-4 h-0.5 w-3 border-t-2 border-dashed sm:w-16 lg:w-24" />
           )}
         </div>
       ))}
