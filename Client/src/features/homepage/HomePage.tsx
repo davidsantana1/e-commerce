@@ -7,7 +7,7 @@ import { products } from "@/utils/dummy-data";
 function HomePage() {
   return (
     <>
-      <div className="mb-10 flex w-full items-center justify-center p-6 lg:p-0">
+      <div className="mb-0 flex w-full items-center justify-center lg:mb-8 lg:p-0">
         <div className="flex w-full grid-cols-1 flex-col gap-10 sm:grid-rows-4 lg:grid lg:grid-cols-10 lg:[grid-template-rows:0.2fr_1fr]">
           <PromoBanner
             glassy={false}
@@ -47,7 +47,7 @@ function HomePage() {
           </div>
         </div>
       </div>
-      <div className="flex w-full flex-col gap-6 p-6 lg:p-0">
+      <div className="flex w-full flex-col gap-6 lg:p-0">
         <BentoBlockLink
           heading="Upgrade Your Everyday – Find the Perfect Phone for You"
           paragraph="From flagship models with cutting-edge innovation to affordable options that get the job done, our collection is designed to meet every need. And with exclusive deals, fast delivery, and easy returns, upgrading your phone has never been this simple.

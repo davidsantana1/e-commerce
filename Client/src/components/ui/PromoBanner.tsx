@@ -25,7 +25,7 @@ function PromoBanner({
 }: PromoBannerProps) {
   return (
     <div
-      className={`relative flex flex-col p-8 pb-0 pl-0 sm:row-span-8 lg:col-span-5 lg:row-span-2 lg:flex-row lg:overflow-hidden lg:pr-0 ${glassy ? "glass" : ""}`}
+      className={`relative flex flex-col p-8 px-0 pb-0 sm:row-span-8 lg:col-span-5 lg:row-span-2 lg:flex-row lg:overflow-hidden ${glassy ? "glass" : ""}`}
     >
       <div className="flex flex-col self-center pb-8">
         <Heading margin="md" size="xxl" weight="bold">

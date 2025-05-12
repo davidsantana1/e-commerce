@@ -1,6 +1,7 @@
 import { cva, VariantProps } from "class-variance-authority";
 import { cloneElement, HTMLAttributes, ReactElement } from "react";
 import { cn } from "@/utils/utils";
+import { Link } from "react-router";
 
 const navBarButtonVariants = cva(
   "aspect-square h-full cursor-pointer rounded-full p-2 lg:p-4",
@@ -35,6 +36,7 @@ interface NavBarButtonProps
   extends HTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof navBarButtonVariants> {
   icon: ReactElement<{ size?: number; className?: string }>;
+  to: string;
 }
 
 function NavBarButton({
@@ -43,16 +45,18 @@ function NavBarButton({
   size,
   bg,
   className,
+  to,
 }: NavBarButtonProps) {
   return (
-    <button
+    <Link
+      to={to}
       className={cn(navBarButtonVariants({ variant, bg, size, className }))}
     >
       {cloneElement(icon, {
         size: 25,
         className: "justify-self-center",
       })}
-    </button>
+    </Link>
   );
 }
 

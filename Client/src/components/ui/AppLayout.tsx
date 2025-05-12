@@ -7,7 +7,7 @@ function AppLayout() {
     <div className="min-h-screen bg-linear-to-br from-[#e9eced] to-[#bec5ca]">
       <NavBar />
       <MobileNavBar />
-      <div className="p-1 lg:p-8 lg:px-12">
+      <div className="p-6 sm:pt-15 md:pt-0 lg:p-8 lg:px-12 lg:pt-6">
         <Outlet />
       </div>
     </div>

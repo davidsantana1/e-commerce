@@ -5,6 +5,7 @@ import AppLayout from "@/components/ui/AppLayout";
 import HomePage from "@/features/homepage/HomePage";
 import Account from "./features/account/Account";
 import Address from "./features/address/Address";
+import Cart from "./features/cart/Cart";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -23,6 +24,7 @@ function App() {
             <Route index element={<HomePage />}></Route>
             <Route path="/account" element={<Account />}></Route>
             <Route path="/address" element={<Address />}></Route>
+            <Route path="/cart" element={<Cart />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

@@ -2,6 +2,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import Form from "@/components/ui/Form";
 import Input from "@/components/ui/Input";
 import ActionButton from "@/components/ui/ActionButton";
+import FileInput from "@/components/ui/FileInput";
 
 type Inputs = {
   firstName: string;
@@ -9,6 +10,7 @@ type Inputs = {
   phoneNumber: string;
   dateOfBirth: Date;
   password: string;
+  profilePicture: string;
 };
 
 function AccountForm() {
@@ -53,6 +55,11 @@ function AccountForm() {
             name="dateOfBirth"
             register={register}
             type="date"
+            errors={errors}
+          />
+          <FileInput
+            name="profilePicture"
+            register={register}
             errors={errors}
           />
         </Form>
