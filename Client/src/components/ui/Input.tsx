@@ -31,7 +31,7 @@ function Input<T extends FieldValues>({
       <InputLabel inputName={name} />
       <input
         id={name}
-        className="outline-brand-500 text-brand-500 mb-2 w-100 rounded-xl bg-white p-4 outline-2 placeholder:font-medium focus:outline-3"
+        className="outline-brand-500 text-brand-500 mb-2 w-90 rounded-xl bg-white p-4 outline-2 placeholder:font-medium focus:outline-3 xl:w-100"
         {...register(name)}
         type={type}
         placeholder={placeholder}
