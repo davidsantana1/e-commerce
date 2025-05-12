@@ -44,7 +44,8 @@ function SearchBar() {
           className="border-brand-200 focus:border-brand-900 w-full grow rounded-[22rem] border-3 bg-white p-4 py-2 transition-all focus:outline-none lg:p-4"
           placeholder="Search products..."
         />
-        <NavBarButton bg="dark" variant="input" icon={<IoIosSearch />} />
+        {/* TODO */}
+        <NavBarButton to="/" bg="dark" variant="input" icon={<IoIosSearch />} />
       </div>
       {isFocused && searchQuery && filteredResults.length > 0 && (
         <ul className="absolute top-2 z-[-1] w-full rounded-3xl bg-white pt-10 xl:pt-14">
