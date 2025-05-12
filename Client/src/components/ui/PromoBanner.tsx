@@ -39,7 +39,7 @@ function PromoBanner({
         </ButtonWithIcon>
       </div>
       <img
-        className="max-h-[80vh] w-xs object-contain select-none lg:w-xs lg:self-auto"
+        className="mx-auto max-h-[80vh] w-xs object-contain select-none lg:w-xs lg:self-auto"
         src={imgSrc}
         alt={imgAlt}
       />

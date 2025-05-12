@@ -1,4 +1,4 @@
-import { ICardItem } from "@/interfaces/ICardItem";
+import { Product } from "@/interfaces/Product";
 import Heading from "./Heading";
 import Paragraph from "./Paragraph";
 import { Link } from "react-router";
@@ -6,16 +6,18 @@ import { IoHeart, IoHeartOutline } from "react-icons/io5";
 import { useState } from "react";
 
 interface CardItemProps {
-  item: ICardItem;
+  item: Product;
 }
 
 function CardItem({ item }: CardItemProps) {
-  const [isWishlisted, setIsWishlisted] = useState(false);
-  const { id, imgSrc, name, price } = item;
+  const { id, imgSrc, name, price, isWishlisted: isLiked } = item;
+  const [isWishlisted, setIsWishlisted] = useState(isLiked);
 
   const category = item.category.toLowerCase();
 
   const HeartIcon = isWishlisted ? IoHeart : IoHeartOutline;
+
+  const slicedName = name.length > 20 ? name.slice(0, 20).trim() + "..." : name;
 
   return (
     <div className="relative">
@@ -27,9 +29,17 @@ function CardItem({ item }: CardItemProps) {
         <HeartIcon size={20} />
       </button>
 
-      <Link to={`/products/${category}/${id}`} className="group" id={id}>
-        <img className="mb-4 max-w-48 rounded-xl" src={imgSrc} alt={name} />
-        <Heading weight="bold">{name}</Heading>
+      <Link
+        to={`/products/${category}/${id}`}
+        className="group"
+        id={id.toString()}
+      >
+        <img
+          className="mb-4 aspect-square max-w-48 rounded-xl object-cover"
+          src={imgSrc}
+          alt={name}
+        />
+        <Heading weight="bold">{slicedName}</Heading>
         <Paragraph variant="dark">${price}</Paragraph>
       </Link>
     </div>

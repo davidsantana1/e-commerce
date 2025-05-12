@@ -12,7 +12,7 @@ interface FormProps<T> extends ChildrenProps {
 function Form<T>({ handleSubmit, onSubmit, children, ...props }: FormProps<T>) {
   return (
     <form
-      className="grid grid-cols-2 gap-8"
+      className="gap-8 lg:grid lg:grid-cols-2"
       onSubmit={handleSubmit(onSubmit)}
       {...props}
     >

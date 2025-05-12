@@ -2,10 +2,12 @@ import Heading from "@/components/ui/Heading";
 import CardList from "./CardList";
 import { IoArrowBackCircle, IoArrowForwardCircle } from "react-icons/io5";
 import { useRef, useState, useEffect, ReactElement, cloneElement } from "react";
+import { Product } from "@/interfaces/Product";
 
-interface SliderWrapperProps {
+interface ProductSliderProps {
   headingText: string;
   icon: ReactElement<{ size: number }>;
+  products: Product[];
 }
 
 interface ArrowButtonProps {
@@ -38,17 +40,20 @@ const ArrowButton = ({
   );
 };
 
-function SliderWrapper({ headingText, icon }: SliderWrapperProps) {
+function ProductSlider({ headingText, products, icon }: ProductSliderProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
+  const [isScrollable, setIsScrollable] = useState(false);
 
   const updateButtonState = () => {
     const el = scrollRef.current;
     if (!el) return;
 
-    setAtStart(el.scrollLeft === 0);
-    setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - 1);
+    const tolerance = 5;
+    setAtStart(el.scrollLeft <= tolerance);
+    setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - tolerance);
+    setIsScrollable(el.scrollWidth > el.clientWidth + tolerance);
   };
 
   const scroll = (direction: "left" | "right") => {
@@ -58,6 +63,9 @@ function SliderWrapper({ headingText, icon }: SliderWrapperProps) {
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
       });
+
+      // Trigger a state update after smooth scroll finishes
+      setTimeout(updateButtonState, 300);
     }
   };
 
@@ -65,10 +73,19 @@ function SliderWrapper({ headingText, icon }: SliderWrapperProps) {
     const el = scrollRef.current;
     if (!el) return;
 
-    updateButtonState();
+    const timeout = setTimeout(() => updateButtonState(), 100);
     el.addEventListener("scroll", updateButtonState);
-    return () => el.removeEventListener("scroll", updateButtonState);
+
+    return () => {
+      clearTimeout(timeout);
+      el.removeEventListener("scroll", updateButtonState);
+    };
   }, []);
+
+  // Recalculate when products change
+  useEffect(() => {
+    updateButtonState();
+  }, [products.length]);
 
   return (
     <div>
@@ -87,24 +104,28 @@ function SliderWrapper({ headingText, icon }: SliderWrapperProps) {
           ref={scrollRef}
           className="scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin scrollbar-thumb-brand-700 scrollbar-track-brand-300 scrollbar-none group-hover:scrollbar h-full min-h-[calc(100%+18rem)] overflow-x-auto overflow-y-hidden pb-3 transition-all"
         >
-          <CardList />
+          <CardList products={products} />
         </div>
 
-        <ArrowButton
-          direction="left"
-          atStart={atStart}
-          atEnd={atEnd}
-          scroll={scroll}
-        />
-        <ArrowButton
-          direction="right"
-          atStart={atStart}
-          atEnd={atEnd}
-          scroll={scroll}
-        />
+        {isScrollable && (
+          <>
+            <ArrowButton
+              direction="left"
+              atStart={atStart}
+              atEnd={atEnd}
+              scroll={scroll}
+            />
+            <ArrowButton
+              direction="right"
+              atStart={atStart}
+              atEnd={atEnd}
+              scroll={scroll}
+            />
+          </>
+        )}
       </div>
     </div>
   );
 }
 
-export default SliderWrapper;
+export default ProductSlider;

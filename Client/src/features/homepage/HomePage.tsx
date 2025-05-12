@@ -1,7 +1,8 @@
-import { IoHeart, IoShirt, IoSparkles } from "react-icons/io5";
+import { IoHeart, IoMusicalNotes, IoShirt, IoSparkles } from "react-icons/io5";
 import BentoBlockLink from "@/components/ui/BentoBlockLink";
-import SliderWrapper from "@/components/ui/SliderWrapper";
+import ProductSlider from "@/components/ui/ProductSlider";
 import PromoBanner from "@/components/ui/PromoBanner";
+import { products } from "@/utils/dummy-data";
 
 function HomePage() {
   return (
@@ -36,7 +37,10 @@ function HomePage() {
           />
 
           <div className="group mt-2 flex flex-col rounded-3xl lg:col-span-5 lg:row-span-1">
-            <SliderWrapper
+            <ProductSlider
+              products={products.filter(
+                (product) => product.isWishlisted && product,
+              )}
               headingText="Your Wishlist"
               icon={<IoHeart className="text-red-500" />}
             />
@@ -56,13 +60,25 @@ function HomePage() {
           imageClassName="w-64 lg:mr-5 mx-auto"
           linkTo="/products/phones"
         />
-        <SliderWrapper
+        <ProductSlider
+          products={products}
           headingText="New Arrivals"
           icon={<IoSparkles className="text-secondary-500" />}
         />
-        <SliderWrapper
+        <ProductSlider
+          products={products.filter(
+            (product) => product.category === "clothing" && product,
+          )}
           headingText="Clothing"
           icon={<IoShirt className="text-secondary-500" />}
+        />
+        <ProductSlider
+          products={products.filter(
+            (product) =>
+              product.category === "musical-instruments-and-gear" && product,
+          )}
+          headingText="Musical Instruments and Gear"
+          icon={<IoMusicalNotes className="text-secondary-500" />}
         />
       </div>
     </>
