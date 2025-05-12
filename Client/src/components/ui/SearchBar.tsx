@@ -9,7 +9,9 @@ function SearchBar() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredResults: Product[] = products.filter(
-    (product) => product.name.toLowerCase().startsWith(searchQuery) && product,
+    (product) =>
+      product.name.toLowerCase().startsWith(searchQuery.toLowerCase()) &&
+      product,
   );
 
   return (
