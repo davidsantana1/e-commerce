@@ -26,7 +26,10 @@
 }
 
 @theme {
-  --breakpoint-xs: 30rem;
+  --breakpoint-xxs: 20rem;
+  --breakpoint-xs: 22rem;
+  --breakpoint-xsm: 25.5rem;
+  --breakpoint-xmd: 26rem;
   --color-brand-50: #e9eced;
   --color-brand-100: #d4d9dc;
   --color-brand-200: #bec5ca;

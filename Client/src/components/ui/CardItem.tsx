@@ -22,7 +22,7 @@ function CardItem({ item }: CardItemProps) {
   const slicedName = truncateName(name);
 
   return (
-    <div className="xs:max-w-48 relative max-w-32">
+    <div className="xxs:max-w-32 xs:max-w-35 xsm:max-w-44 xmd:max-w-46 relative max-w-30">
       <button
         aria-label={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
         className="text-brand-50 absolute top-2 right-2 cursor-pointer rounded-full bg-red-500 p-2 hover:bg-red-700"
@@ -37,7 +37,7 @@ function CardItem({ item }: CardItemProps) {
         id={id.toString()}
       >
         <img
-          className="xs:max-w-48 mb-4 aspect-square max-w-32 rounded-xl object-cover"
+          className="xxs:max-w-32 xs:max-w-35 xsm:max-w-44 xmd:max-w-46 mb-4 aspect-square max-w-30 rounded-xl object-cover"
           src={imgSrc}
           alt={name}
         />
