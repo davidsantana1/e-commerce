@@ -5,4 +5,6 @@ export interface Product {
   imgSrc: string;
   category: string;
   isWishlisted: boolean;
+  description: string;
+  brand: string;
 }

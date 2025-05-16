@@ -9,7 +9,7 @@ function CardList({ products }: CardListProps) {
   return (
     <div className="flex gap-4">
       {products.map((product: Product) => (
-        <CardItem item={product} />
+        <CardItem key={product.id} item={product} />
       ))}
     </div>
   );

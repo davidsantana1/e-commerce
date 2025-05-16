@@ -6,6 +6,7 @@ import HomePage from "@/features/homepage/HomePage";
 import Account from "./features/account/Account";
 import Address from "./features/address/Address";
 import Cart from "./features/cart/Cart";
+import Product from "./features/product/Product";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -25,6 +26,7 @@ function App() {
             <Route path="/account" element={<Account />}></Route>
             <Route path="/address" element={<Address />}></Route>
             <Route path="/cart" element={<Cart />}></Route>
+            <Route path="/products/:category/:id" element={<Product />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>
