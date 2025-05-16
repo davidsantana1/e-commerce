@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Product } from "@/interfaces/Product";
 import { replaceDashesWithSpaces } from "@/lib/utils";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 interface ProductBreadcrumbProps {
   product: Product;
@@ -26,7 +26,7 @@ function ProductBreadcrumb({ product }: ProductBreadcrumbProps) {
       <BreadcrumbList className="text-xl font-bold">
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
-            <Link to="/">Home</Link>
+            <Link to="/products/all-products">All Products</Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator className="[&>svg]:size-5" />

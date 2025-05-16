@@ -2,7 +2,7 @@ export interface Product {
   id: number;
   name: string;
   price: number;
-  imgSrc: string;
+  images: string[];
   category: string;
   isWishlisted: boolean;
   description: string;

@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import Heading from "./Heading";
 import Paragraph from "./Paragraph";
 import { cloneElement, ReactElement } from "react";

@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import ProductBreadcrumb from "./ProductBreadcrumb";
 import ProductGallery from "./ProductGallery";
 import ProductNotFoundPage from "./ProductNotFoundPage";

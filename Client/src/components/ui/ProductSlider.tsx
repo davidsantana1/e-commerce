@@ -3,11 +3,13 @@ import CardList from "./CardList";
 import { IoArrowBackCircle, IoArrowForwardCircle } from "react-icons/io5";
 import { useRef, useState, useEffect, ReactElement, cloneElement } from "react";
 import { Product } from "@/interfaces/Product";
+import { Link } from "react-router-dom";
 
 interface ProductSliderProps {
   headingText: string;
   icon: ReactElement<{ size: number }>;
   products: Product[];
+  categoryName: string;
 }
 
 interface ArrowButtonProps {
@@ -40,7 +42,12 @@ const ArrowButton = ({
   );
 };
 
-function ProductSlider({ headingText, products, icon }: ProductSliderProps) {
+function ProductSlider({
+  headingText,
+  products,
+  icon,
+  categoryName,
+}: ProductSliderProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
@@ -64,7 +71,6 @@ function ProductSlider({ headingText, products, icon }: ProductSliderProps) {
         behavior: "smooth",
       });
 
-      // Trigger a state update after smooth scroll finishes
       setTimeout(updateButtonState, 300);
     }
   };
@@ -82,27 +88,31 @@ function ProductSlider({ headingText, products, icon }: ProductSliderProps) {
     };
   }, []);
 
-  // Recalculate when products change
   useEffect(() => {
     updateButtonState();
   }, [products.length]);
 
   return (
     <div>
-      <div className="mb-4 flex items-center gap-2">
-        {cloneElement(
-          icon,
-          icon.props?.size ? { ...icon.props } : { ...icon.props, size: 25 },
-        )}
-        <Heading weight="bold" size="xl">
-          {headingText}
-        </Heading>
+      <div className="flex">
+        <Link
+          className="mb-4 flex items-center gap-2"
+          to={`/products/${categoryName}`}
+        >
+          {cloneElement(
+            icon,
+            icon.props?.size ? { ...icon.props } : { ...icon.props, size: 25 },
+          )}
+          <Heading weight="bold" size="xl">
+            {headingText}
+          </Heading>
+        </Link>
       </div>
 
       <div className="group relative w-full">
         <div
           ref={scrollRef}
-          className="scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin scrollbar-thumb-brand-700 scrollbar-track-brand-300 scrollbar-none group-hover:scrollbar h-full min-h-[calc(100%+18rem)] overflow-x-auto overflow-y-hidden pb-3 transition-all"
+          className="scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin scrollbar-thumb-brand-700 scrollbar-track-brand-300 scrollbar-none group-hover:scrollbar xs:min-h-[calc(100%+18rem)] mb-3 h-full overflow-x-auto overflow-y-hidden pb-3 transition-all lg:mb-0"
         >
           <CardList products={products} />
         </div>

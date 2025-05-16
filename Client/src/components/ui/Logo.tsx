@@ -1,11 +1,16 @@
 import { FaShieldDog } from "react-icons/fa6";
 import Heading from "./Heading";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
-function Logo() {
+interface LogoProps {
+  className?: string;
+  logoSize?: number;
+}
+
+function Logo({ className, logoSize = 30 }: LogoProps) {
   return (
-    <Link to="/" className="flex gap-2">
-      <FaShieldDog size={30} />
+    <Link to="/" className={`${className} flex gap-2`}>
+      <FaShieldDog size={logoSize} />
       <Heading tint="dark" as="h2" size="lg" weight="bold">
         Terranova
       </Heading>

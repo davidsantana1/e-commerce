@@ -1,7 +1,7 @@
 import { cva, VariantProps } from "class-variance-authority";
 import { cloneElement, HTMLAttributes, ReactElement } from "react";
 import { cn } from "@/utils/utils";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 const navBarButtonVariants = cva(
   "aspect-square h-full cursor-pointer rounded-full p-2 lg:p-4",

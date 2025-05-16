@@ -14,7 +14,9 @@ const headingVariants = cva("", {
       md: "text-base",
       lg: "text-2xl xl:text-2xl lg:text-sm",
       xl: "text-3xl",
-      xxl: "text-6xl",
+      xxl: "text-4xl",
+      xxxl: "text-5xl",
+      xxxxl: "text-6xl",
     },
     weight: {
       default: "font-normal",

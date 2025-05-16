@@ -1,5 +1,5 @@
 import { cloneElement, HTMLAttributes, ReactElement } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 interface ButtonWithIconProps extends HTMLAttributes<HTMLButtonElement> {
   icon: ReactElement<{ size?: number; className?: string }>;

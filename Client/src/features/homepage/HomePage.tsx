@@ -2,9 +2,11 @@ import { IoHeart, IoMusicalNotes, IoShirt, IoSparkles } from "react-icons/io5";
 import BentoBlockLink from "@/components/ui/BentoBlockLink";
 import ProductSlider from "@/components/ui/ProductSlider";
 import PromoBanner from "@/components/ui/PromoBanner";
-import { products } from "@/utils/dummy-data";
+import { getProducts } from "@/lib/utils";
 
 function HomePage() {
+  const products = getProducts("all-products");
+
   return (
     <>
       <div className="mb-0 flex w-full items-center justify-center lg:mb-8 lg:p-0">
@@ -33,14 +35,13 @@ function HomePage() {
             imageMargin="lg:mt-2"
             rowSpan="lg:row-span-1"
             imageClassName="w-64 lg:max-w-50"
-            linkTo="/products/clothes"
+            linkTo="/products/clothing"
           />
 
           <div className="group mt-2 flex flex-col rounded-3xl lg:col-span-5 lg:row-span-1">
             <ProductSlider
-              products={products.filter(
-                (product) => product.isWishlisted && product,
-              )}
+              categoryName="/"
+              products={getProducts("wishlisted")}
               headingText="Your Wishlist"
               icon={<IoHeart className="text-red-500" />}
             />
@@ -61,23 +62,21 @@ function HomePage() {
           linkTo="/products/phones"
         />
         <ProductSlider
+          categoryName="all-products"
           products={products}
           headingText="New Arrivals"
           icon={<IoSparkles className="text-secondary-500" />}
         />
         <ProductSlider
-          products={products.filter(
-            (product) => product.category === "clothing" && product,
-          )}
+          categoryName="clothing"
+          products={getProducts("clothing")}
           headingText="Clothing"
           icon={<IoShirt className="text-secondary-500" />}
         />
         <ProductSlider
-          products={products.filter(
-            (product) =>
-              product.category === "musical-instruments-and-gear" && product,
-          )}
-          headingText="Musical Instruments and Gear"
+          categoryName="music-gear"
+          products={getProducts("music-gear")}
+          headingText="Music Gear"
           icon={<IoMusicalNotes className="text-secondary-500" />}
         />
       </div>
