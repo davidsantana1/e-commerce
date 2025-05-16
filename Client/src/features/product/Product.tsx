@@ -16,9 +16,9 @@ function Product() {
   if (!product) return null;
 
   return (
-    <div className="px-16">
+    <div className="pt-5 lg:px-16 lg:pt-0">
       <ProductBreadcrumb product={product} />
-      <div className="grid grid-cols-2 gap-12">
+      <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2 lg:gap-12">
         <ProductGallery product={product} />
 
         <ProductDetails product={product} />
