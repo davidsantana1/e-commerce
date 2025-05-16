@@ -10,7 +10,7 @@ function ProductGallery({ product }: ProductGalleryProps) {
 
   return (
     <div className="grid grid-rows-[auto_auto] lg:grid-cols-[0.2fr_1fr] lg:grid-rows-1 lg:gap-2">
-      <div className="row-start-2 grid grid-cols-5 gap-2 lg:row-start-1 lg:grid-cols-1 lg:grid-rows-5 [&>img]:aspect-square [&>img]:flex-1 [&>img]:justify-center [&>img]:object-cover lg:[&>img]:h-full">
+      <div className="group [&>img]:peer row-start-2 grid grid-cols-5 gap-2 lg:row-start-1 lg:grid-cols-1 lg:grid-rows-5 [&>img]:aspect-square [&>img]:flex-1 [&>img]:cursor-pointer [&>img]:justify-center [&>img]:object-cover [&>img]:transition-opacity [&>img]:duration-200 [&>img]:group-hover:opacity-50 [&>img]:hover:!opacity-100 lg:[&>img]:h-full">
         <img className="rounded-xl" src={imgSrc} alt="" />
         <img className="rounded-xl" src={imgSrc} alt="" />
         <img className="rounded-xl" src={imgSrc} alt="" />

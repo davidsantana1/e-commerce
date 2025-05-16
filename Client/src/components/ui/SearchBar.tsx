@@ -18,6 +18,7 @@ function SearchBar() {
       !containerRef.current.contains(e.relatedTarget as Node)
     ) {
       setIsFocused(false);
+      setSearchQuery("");
     }
   };
 
