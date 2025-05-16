@@ -51,7 +51,10 @@ function ProductDetails({ product }: ProductDetailsProps) {
       <Btn
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className={`flex items-center gap-2 border-2 border-red-500 font-[600] ${product.isWishlisted ? "text-brand-50 bg-red-500 hover:bg-transparent hover:text-red-500" : "hover:text-brand-50 text-red-500 hover:bg-red-500"}`}
+        onClick={() => {
+          product.isWishlisted = !product.isWishlisted;
+        }}
+        className={`flex items-center gap-2 border-2 border-red-500 font-[600] transition-all ${product.isWishlisted ? "text-brand-50 bg-red-500 hover:bg-transparent hover:text-red-500" : "hover:text-brand-50 text-red-500 hover:bg-red-500"}`}
         variant="outline"
       >
         {showWishlisted ? (
