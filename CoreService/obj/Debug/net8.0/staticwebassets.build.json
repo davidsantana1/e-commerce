@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "hQkvYqFDztvQuu80hiFQ34zLARKC5EA0WTdbdwRl3Bo=",
+  "Source": "CoreService",
+  "BasePath": "_content/CoreService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
