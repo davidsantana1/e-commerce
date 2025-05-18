@@ -17,8 +17,8 @@ function CategorySidebar() {
         </li>
         {categories.map((category, index) => (
           <li
-            key={index}
-            className={`${index === categories.length - 1 && "border-brand-300 border-b"} ml-3 capitalize`}
+            key={category}
+            className={`${index === categories.length - 1 ? "border-brand-300 border-b" : ""} ml-3 capitalize`}
           >
             <Link to={`/products/${category}`}>
               <Heading weight="bold" as="h3">

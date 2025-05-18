@@ -10,6 +10,7 @@ import Cart from "./features/cart/Cart";
 import Product from "./features/product/Product";
 import ErrorPage from "./components/ui/ErrorPage";
 import Category from "./features/category/Category";
+import Wishlist from "./features/wishlist/Wishlist";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
       { path: "cart", element: <Cart /> },
       { path: "products/:category/:id", element: <Product /> },
       { path: "products/:category", element: <Category /> },
+      { path: "wishlist", element: <Wishlist /> },
     ],
   },
 ]);

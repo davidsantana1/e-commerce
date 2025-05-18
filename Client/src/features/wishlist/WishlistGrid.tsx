@@ -1,13 +1,12 @@
 import CardItem from "@/components/ui/CardItem";
 import CartItemContainer from "@/components/ui/CartItemContainer";
-import { Product } from "@/interfaces/Product";
+import { getProducts } from "@/lib/utils";
 
-interface CategoryGridProps {
-  products: Product[];
-}
-function CategoryGrid({ products }: CategoryGridProps) {
+function WishlistGrid() {
+  const products = getProducts("wishlisted");
+
   return (
-    <CartItemContainer>
+    <CartItemContainer isWishlist>
       {products.map((product) => (
         <CardItem key={product.name} item={product} />
       ))}
@@ -15,4 +14,4 @@ function CategoryGrid({ products }: CategoryGridProps) {
   );
 }
 
-export default CategoryGrid;
+export default WishlistGrid;
