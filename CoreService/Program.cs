@@ -1,3 +1,6 @@
+using CoreService.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Register the DbContext with the dependency injection container
+builder.Services.AddDbContext<TerranovaDbContext>(
+    options => options.UseSqlServer(builder.Configuration.GetConnectionString("TerranovaConnection")));
+builder.Services.AddDbContext<EventLogDbContext>(
+    options => options.UseSqlServer(builder.Configuration.GetConnectionString("EventLogConnection")));
+    
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,4 +1,4 @@
-CoreService/bin/
-CoreService/obj/
-CoreService/appsettings.json
-CoreService/appsettings.Development.json
+bin/
+obj/
+appsettings.json
+appsettings.Development.json
