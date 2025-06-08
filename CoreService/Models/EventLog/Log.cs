@@ -5,15 +5,16 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CoreService.Model.Evento
+namespace CoreService.Models.Evento
 {
     public class Log
     {
         [Key]
         public int Id { get; set; }
-        public string IdUser { get; set; } = null!;
-        public string? Message { get; set; }
+        public string SourceSystem { get; set; } = null!;
+        public string UserId { get; set; } = null!;
+        public string? Description { get; set; }
         [DataType(DataType.DateTime)]
-        public DateTime RegistredAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
 }

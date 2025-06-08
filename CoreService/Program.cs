@@ -1,19 +1,22 @@
 using CoreService.Data;
 using Microsoft.EntityFrameworkCore;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);   
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Add controllers to the service collection
+builder.Services.AddControllers();
+
 // Register the DbContext with the dependency injection container
 builder.Services.AddDbContext<TerranovaDbContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("TerranovaConnection")));
 builder.Services.AddDbContext<EventLogDbContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("EventLogConnection")));
-    
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -44,6 +47,7 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast")
 .WithOpenApi();
+app.MapControllers();
 
 app.Run();
 

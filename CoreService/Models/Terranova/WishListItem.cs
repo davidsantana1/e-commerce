@@ -1,23 +1,23 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
-namespace CoreService.Model.Terranova
+namespace CoreService.Models.Terranova
 {
-    public class CartItem
+    public class WishListItem
     {
         public int Id { get; set; }
         [Required]
-        public int CartId { get; set; }
+        public int WishListId { get; set; }
         [Required]
         public int ProductId { get; set; }
         [DataType(DataType.DateTime)]
         public DateTime DateAdded { get; set; }
 
         // Entidades
-        public Cart Cart { get; private set; }
+        public WishList WishList { get; private set; }
         public Product Product { get; private set; }
     }
 }

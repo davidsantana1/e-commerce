@@ -5,6 +5,7 @@ This repository contains all information you need to create and know the design 
 ## Contents
 
 - Database creation script
+- User information
 - Structure
 	- Tables
 	- Stored procedures
@@ -18,6 +19,11 @@ This repository contains all information you need to create and know the design 
 
 1. Open SQL Server Management Studio.
 2. Open Data folder and run the scripts in order.
+
+## User information
+
+- User -> EventLogger
+- Password -> event123456
 
 ## Structure
 

@@ -4,20 +4,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace CoreService.Model.Terranova
+namespace CoreService.Models.Terranova
 {
-    public class WishListItem
+    public class ProductSubCategory
     {
         public int Id { get; set; }
         [Required]
-        public int WishListId { get; set; }
-        [Required]
         public int ProductId { get; set; }
-        [DataType(DataType.DateTime)]
-        public DateTime DateAdded { get; set; }
+        [Required]
+        public int SubCategoryId { get; set; }
 
         // Entidades
-        public WishList WishList { get; private set; }
         public Product Product { get; private set; }
+        public SubCategory SubCategory { get; private set; }
     }
 }

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CoreService.Model.Evento;
+using CoreService.Models.Evento;
 using Microsoft.EntityFrameworkCore;
 
 namespace CoreService.Data

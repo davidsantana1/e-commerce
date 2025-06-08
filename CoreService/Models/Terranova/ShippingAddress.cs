@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CoreService.Model.Terranova
+namespace CoreService.Models.Terranova
 {
     public class ShippingAddress
     {

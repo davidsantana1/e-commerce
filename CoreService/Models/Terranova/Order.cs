@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 
-namespace CoreService.Model.Terranova
+namespace CoreService.Models.Terranova
 {
-    public class Invoice
+    public class Order
     {
         public int Id { get; set; }
         [Required]
-        public int UserId { get; set; }
+        public int UserId { get; set;}
         [Required]
         public int ShippingAddressId { get; set; }
         [Required]
-        public int OrderId { get; set;}
         [StringLength(maximumLength: 10)]
         public string Currency { get; set; }
+        [Required]
         [Range(0.00, 9999999999999999.99)]
         public decimal TotalAmount { get; set; }
         [Range(0.00, 9999999999999999.99)]
@@ -27,20 +26,19 @@ namespace CoreService.Model.Terranova
         [Range(0.00, 9999999999999999.99)]
         public decimal ShippingAmount { get; set; }
         [StringLength(maximumLength: 50)]
-        public string PaymentStatus { get; set; }
+        public string OrderStatus { get; set; }
         [StringLength(maximumLength: 50)]
-        public string InvoiceStatus { get; set; }
+        public string PaymentStatus { get; set; }
         [StringLength(maximumLength: 50)]
         public string PaymentMethod { get; set; }
         [DataType(DataType.DateTime)]
-        public DateTime InvoiceDate { get; set; }
+        public DateTime OrderDate { get; set; }
         [DataType(DataType.DateTime)]
         public DateTime DueDate { get; set; }
 
         // Entidades
-        public User User { get; private set;}
-        public ShippingAddress ShippingAddress { get; private set;}
-        public Order Order { get; private set; }
+        public User User { get; private set; }
+        public Invoice Invoice { get; private set; }
         public List<Product> Products { get; private set; }
     }
 }
