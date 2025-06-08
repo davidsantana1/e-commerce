@@ -12,8 +12,9 @@ namespace CoreService.Models.Evento
         [Key]
         public int Id { get; set; }
         public string SourceSystem { get; set; } = null!;
-        public string UserId { get; set; } = null!;
+        public int UserId { get; set; }
         public string? Description { get; set; }
+        public string? Action { get; set; }
         [DataType(DataType.DateTime)]
         public DateTime CreatedAt { get; set; } = DateTime.Now;
     }

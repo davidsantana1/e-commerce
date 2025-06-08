@@ -1,4 +1,6 @@
 using CoreService.Data;
+using CoreService.Repositories;
+using CoreService.Repositories.Interface;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);   
@@ -16,6 +18,9 @@ builder.Services.AddDbContext<TerranovaDbContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("TerranovaConnection")));
 builder.Services.AddDbContext<EventLogDbContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("EventLogConnection")));
+
+// Register the EventLog repository
+builder.Services.AddScoped<IEventLogRepository, EventLogRepository>();
 
 var app = builder.Build();
 
