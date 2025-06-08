@@ -1,72 +1,22 @@
-# Database: Terranova
+# Database Directory
 
-This repository contains all information you need to create and know the design behind the database [Terranova].
-
-## Contents
-
-- Database creation script
-- Structure
-	-Tables with relationships and foreign keys
-	- Stored procedures
-	- Views and functions
-	- Indexes and basic optimization
-
-## Requirements
-
-- SQL Server 2022 or higher
-- SQL Server Management Studio (SSMS)
-
-## Database creation script
-
-1. Open SQL Server Management Studio.
-2. Open Data folder and run the scripts in order.
+This folder contains the SQL schemas and scripts for the databases used in this project.
 
 ## Structure
 
-### Main Tables
+- **Terranova/**  
+  Main operational database for the e-commerce system (Terranova), including users, orders, products, and business logic.
 
-- User -> Stores user information.
-- ShippingAddress -> Delivery addresses per user.
-- Cart -> Active shopping carts for users.
-- Wishlist -> Articles that the user could want.
-- Order -> Placed orders.
-- Invoice -> Billing and payments.
-- Product -> Product Catalog.
-- ProductVariant -> Variants of products (size, color, etc.)
-- ProductImage -> Images associated with products.
-- Category -> Set of categories.
-- SubCategory -> Set of subcategories.
+- **Event/**  
+  Event-driven logging database used by the Web API to store audit trails, API calls, or user actions.
 
-### Foreign Keys
+## Usage
 
-- ProductImage->ProductVariant (NO_ACTION)
-- WishList->User (CASCADE)
-- Cart->User (CASCADE)
-- ShippingAddress->User (CASCADE)
-- Order->User (CASCADE)
-- Invoice->User (CASCADE)
-- WishListItem->WishList (CASCADE)
-- CartItem->Cart (CASCADE)
-- Order->ShippingAddress (NO_ACTION)
-- Invoice->ShippingAddress (NO_ACTION)
-- OrderItem->Order (CASCADE)
-- Invoice->Order (NO_ACTION)
-- InvoiceItem->Invoice (CASCADE)
-- SubCategory->Category (CASCADE)
-- ProductSubCategory->SubCategory (CASCADE)
-- ProductSubCategory->Product (CASCADE)
-- ProductVariant->Product (CASCADE)
-- ProductImage->Product (CASCADE)
-- InvoiceItem->Product (NO_ACTION)
-- WishListItem->Product (CASCADE)
-- CartItem->Product (CASCADE)
-- OrderItem->Product (NO_ACTION)
+Each folder contains:
+- SQL scripts to generate tables, stored procedures, and indexes.
+- A separate `README.md` explaining that specific database.
 
+## Recommendations
 
-### Stored Procedures
-
-### Views
-
-### Functions
-
-### Index
+- Keep sensitive data out of this repository.
+- Use environment-specific configurations (e.g., `appsettings.json`) to set connection strings.
